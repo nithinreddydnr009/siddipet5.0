@@ -19,10 +19,10 @@ function displaySalesData() {
 
     salesData.forEach((sale, index) => {
         const row = tableBody.insertRow();
-        row.insertCell(0).textContent = sale.date;
-        row.insertCell(1).textContent = sale.person;
-        row.insertCell(2).textContent = sale.product;
-        row.insertCell(3).textContent = sale.rate || 0;
+        row.insertCell(0).textContent = sale.Date;
+        row.insertCell(1).textContent = sale.Customer;
+        row.insertCell(2).textContent = sale.Product;
+        row.insertCell(3).textContent = sale.Rate || 0;
         const tonsCell = row.insertCell(4);
         const amountPaidCell = row.insertCell(5);
         const amountPaidInCashCell = row.insertCell(6);
@@ -77,7 +77,7 @@ function addSale() {
     const creditInput = parseFloat(document.getElementById('creditInput').value) || 0;
 
     if (dateInput && personInput && productInput) {
-        const newSale = { date: dateInput, person: personInput, product: productInput, rate: rateInput, tons: tonsInput, amountPaid: amountPaidInput, amountPaidInCash: amountPaidInCashInput, credit: creditInput, totalSale: amountPaidInput + amountPaidInCashInput + creditInput };
+        const newSale = { Date: dateInput, Customer: personInput, Product: productInput, Rate: rateInput, tons: tonsInput, amountPaid: amountPaidInput, amountPaidInCash: amountPaidInCashInput, credit: creditInput, totalSale: amountPaidInput + amountPaidInCashInput + creditInput };
         salesData.push(newSale);
         displaySalesData();
 
@@ -102,7 +102,7 @@ function deleteSale(index) {
 }
 
 function downloadBalanceSheet() {
-    const withTotal = [...salesData, { date: 'TOTAL:', person: '', product: '', rate: '', tons: document.getElementById('totalTons').textContent, amountPaid: document.getElementById('totalAmountPaid').textContent, amountPaidInCash: document.getElementById('totalAmountPaidInCash').textContent, credit: document.getElementById('totalCredit').textContent, totalSale: document.getElementById('totalSale').textContent }];
+    const withTotal = [...salesData, { Date: 'TOTAL:', Customer: '', Product: '', Rate: '', tons: document.getElementById('totalTons').textContent, amountPaid: document.getElementById('totalAmountPaid').textContent, amountPaidInCash: document.getElementById('totalAmountPaidInCash').textContent, credit: document.getElementById('totalCredit').textContent, totalSale: document.getElementById('totalSale').textContent }];
     
     const worksheet = XLSX.utils.json_to_sheet(withTotal);
   	const workbook = XLSX.utils.book_new();
@@ -111,3 +111,6 @@ function downloadBalanceSheet() {
 }
 
 displaySalesData();
+
+
+
