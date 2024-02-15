@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <h1>SIDDIPET SALES PAGE</h1>
+    <h1>SIDDIPET DAILY SALES TOOL</h1>
 
     <table id="salesTable">
         <thead>
@@ -18,9 +18,10 @@
                 <th>Product</th>
                 <th>Rate</th>
                 <th>Tons Purchased</th>
-                <th>Amount Paid ($)</th>
+                <th>Amount Paid A/c ($)</th>
+                <th>Amount Paid in Cash ($)</th>
                 <th>Credit ($)</th>
-                <th>Total Sale ($)</th>
+                <th>Total Sales ($)</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -32,6 +33,7 @@
                 <td colspan="4">Total:</td>
                 <td id="totalTons"></td>
                 <td id="totalAmountPaid"></td>
+                <td id="totalAmountPaidInCash"></td>
                 <td id="totalCredit"></td>
                 <td id="totalSale"></td>
                 <td></td>
@@ -62,8 +64,11 @@
         <label for="tonsInput">Tons Purchased:</label>
         <input type="number" id="tonsInput">
 
-        <label for="amountPaidInput">Amount Paid:</label>
+        <label for="amountPaidInput">Amount Paid A/c:</label>
         <input type="number" id="amountPaidInput">
+
+        <label for="amountPaidInCashInput">Amount Paid in Cash:</label>
+        <input type="number" id="amountPaidInCashInput">
 
         <label for="creditInput">Credit:</label>
         <input type="number" id="creditInput">
@@ -74,6 +79,10 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
     <script src="script.js"></script>
+
+</body>
+</html>
+
 
 </body>
 </html>
